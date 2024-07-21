@@ -7,7 +7,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
+Route::get('/application', function () {
+    return view('application');
+});
 
 Route::get('/dashboard', function () {
     return view('dashboard');
