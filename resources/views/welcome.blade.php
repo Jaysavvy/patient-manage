@@ -153,7 +153,7 @@
                     </td>
                     <td class="py-4 pl-0 pr-4 text-sm leading-6 sm:pr-8 lg:pr-20">
                         <div class="flex items-center gap-x-2">
-                            <img src="{{ Vite::asset('resources/assets/icons/Cancelled.svg') }}" alt="check"
+                            <img src="{{ Vite::asset('resources/assets/icons/cancelled.svg') }}" alt="check"
                                 class="h-5 w-5">
                             <span class="text-red-600">Cancelled</span>
                         </div>
