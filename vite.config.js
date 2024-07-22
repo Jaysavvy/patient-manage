@@ -8,7 +8,7 @@ export default defineConfig({
                 'resources/css/app.css',
                 'resources/js/app.js',
                 // Include additional assets as needed
-                'resources/assets/icons/Cancelled.svg'
+                // 'resources/assets/**/*',
             ],
             refresh: true,
         }),
