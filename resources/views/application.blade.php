@@ -1,6 +1,6 @@
 <x-layout>
 
-    <x-forms.form method="POST" action="/">
+    <x-forms.form method="POST" action="/" enctype="multipart/form-data">
 
         <div class="mt-6">
             @php
@@ -179,12 +179,31 @@
 
             <div class="mb-4 md:flex md:gap-6">
                 <div class="md:flex-1 mb-4 md:mb-0">
-                    <x-forms.inputText label="Upload ID" name="uploadId" id="uploadId" type="file"
-                        placeholder="Upload ID" />
+                    {{-- <x-forms.inputText label="Upload ID" name="uploadId" id="uploadId" type="file"
+                        placeholder="Upload ID" /> --}}
+
+                    <x-forms.upload />
 
                 </div>
             </div>
-            <x-forms.button>
+
+            <x-forms.section>
+                Consent and Privacy
+            </x-forms.section>
+
+            <div class="mb-4 md:flex md:gap-6">
+
+                <x-forms.checkbox label="Consent and Privacy" name="consent" :options="[
+                    'I consent to receive treatment for my health condition.',
+                    'I consent to the use and disclosure of my health information for treatment purposes.',
+                    'I acknowledge that I have reviewed and agree to the privacy policy',
+                ]">
+
+                </x-forms.checkbox>
+
+            </div>
+
+            <x-forms.button class="w-full">
                 Submit
             </x-forms.button>
     </x-forms.form>

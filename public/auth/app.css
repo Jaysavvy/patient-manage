@@ -1,9 +1,11 @@
 #auth-body{
+   
   opacity:80;
 }
 
 #auth-container{
-  border:0px !important;
+  background-color: black;
+  
 }
 
 #auth-heading-container{
