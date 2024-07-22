@@ -7,8 +7,8 @@ export default defineConfig({
             input: [
                 'resources/css/app.css',
                 'resources/js/app.js',
-                // Wildcard to include all files in the resources directory
-                'resources/**/*',
+                // Include additional assets as needed
+                'resources/assets/icons/Cancelled.svg'
             ],
             refresh: true,
         }),
