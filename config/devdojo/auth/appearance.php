@@ -18,7 +18,7 @@ return [
         'image_overlay_opacity' => '0.15',
     ],
     'color' => [
-        'text' => '#212936',
+        'text' => '#fafafa',
         'button' => '#41e191',
         'button_text' => '#ffffff',
         'input_text' => '',
