@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             // Remove redundant columns: name, email, password
+            $table->string('name');
             $table->string('phone_number');
             $table->string('specialty');
             $table->string('avatar')->nullable();

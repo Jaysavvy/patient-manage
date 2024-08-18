@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('identification_and_verification', function (Blueprint $table) {
             $table->id();
             $table->foreignId('patient_id')->constrained()->onDelete('cascade');
-            $table->string('primary_care_physician');
+            $table->string('Identification_type');
             $table->string('identification_number');
             $table->string('scanned_copy_of_identification_document');
 

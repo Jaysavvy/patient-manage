@@ -2,6 +2,7 @@
 
 namespace Database\Factories;
 
+use App\Models\Patient;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
 /**
@@ -17,7 +18,10 @@ class IdentificationAndVerificationFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'patient_id' => Patient::factory(),
+            'Identification_type' => $this->fake()->randomElement(['Birth Certificate', 'Passport',]),
+            'identification_number' => $this->fake()->randomNumber(9, true),
+
         ];
     }
 }

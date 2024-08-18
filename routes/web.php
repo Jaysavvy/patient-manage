@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
+use App\Models\Doctor;
 
 Route::get('/', function () {
     return view('welcome');
@@ -9,6 +10,10 @@ Route::get('/', function () {
 
 Route::get('/application', function () {
     return view('application');
+});
+
+Route::get('/appointment', function () {
+    return view('appointment');
 });
 
 Route::get('/dashboard', function () {
@@ -20,5 +25,13 @@ Route::middleware('auth')->group(function () {
     Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
+
+Route::get('/doctor/{id}', function (string $id) {
+
+    $doctor = Doctor::findOrFail($id);
+
+    return view('profile.doctor', ['doctor' => $doctor]);
+});
+
 
 require __DIR__ . '/auth.php';

@@ -159,11 +159,39 @@
 
             <div class="mb-4 md:flex md:gap-6">
 
-                <div class="md:flex-1 mb-4 md:mb-0">
+                {{-- class="md:flex-1 mb-4 md:mb-0">
                     <x-forms.inputText label="Primary Care Physician" name="primaryCarePhysician"
-                        id="primaryCarePhysician" type="text" placeholder="Dr.Madix" />
+                        id="primaryCarePhysician" list="doctors" placeholder="Dr.Madix" />
+
+
+                </div>" --}}
+
+                <div class="md:flex-1 mb-4 md:mb-0">
+                    <!-- Label for the input field -->
+                    <label for="primaryCarePhysician">Primary Care Physician</label>
+
+                    <!-- Input field with datalist -->
+                    <input type="text" name="primaryCarePhysician" id="primaryCarePhysician" list="doctors"
+                        placeholder="Dr. Madix" />
+
+                    <!-- Datalist providing suggestions for the input field -->
+                    <datalist id="doctors">
+                        <option value="Dr. Madix">
+                        <option value="Dr. Smith">
+                    </datalist>
+
+                    {{-- <input list="doctors" name="primaryCarePhysician" id="primaryCarePhysician" name="doctors" />
+
+                    <datalist id="primaryCarePhysician">
+                        <option value="Dr.Madix"></option>
+                        <option value="Dr.Khan"></option>
+                        <option value="Dr.Pinal"></option>
+                        <option value="Dr.Chief"></option>
+                        <option value="Dr.battle"></option>
+                    </datalist> --}}
 
                 </div>
+
             </div>
 
             <div class="mb-4 md:flex md:gap-6">
