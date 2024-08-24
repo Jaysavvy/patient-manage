@@ -27,8 +27,37 @@ class PatientFactory extends Factory
             'gender' => $this->faker->randomElement(['Male', 'Female', 'Other']),
             'occupation' => $this->faker->jobTitle,
             'address' => $this->faker->address,
-            'emergency_contact_name' => $this->faker->name,
-            'emergency_contact_phone_number' => $this->faker->phoneNumber,
+
+            // JSON for emergency contact information
+            'emergency_contact' => [
+                'name' => $this->faker->name,
+                'phone_number' => $this->faker->phoneNumber
+            ],
+
+            // JSON for medical information
+            'medical_information' => [
+                'primary_care_physician' => $this->faker->randomElement(['Dr. Pain', 'Dr. Trauma', 'Dr. Buff']),
+                'insurance_provider' => $this->faker->company,
+                'insurance_policy_number' => $this->faker->unique()->numerify('POL###-###-####'),
+                'allergies' => $this->faker->words(3, true),
+                'current_medication' => $this->faker->words(5, true),
+                'family_medical_history' => $this->faker->sentences(3, true),
+                'past_medical_history' => $this->faker->sentences(3, true)
+            ],
+
+            // JSON for identification
+            'identification' => [
+                'type' => $this->faker->randomElement(['Birth Certificate', 'Passport']),
+                'number' => $this->faker->randomNumber(9, true),
+                'scanned_copy' => $this->faker->url // Placeholder URL for scanned copy
+            ],
+
+            // JSON for consents
+            'consents' => [
+                'treatment_consent' => $this->faker->boolean(90),  // 90% chance of true
+                'information_disclosure_consent' => $this->faker->boolean(70),  // 70% chance of true
+                'privacy_policy_agreement' => $this->faker->boolean(100)  // Always true
+            ],
         ];
     }
 }

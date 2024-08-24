@@ -1,6 +1,8 @@
 <?php
 
 use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DoctorController;
+use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Route;
 use App\Models\Doctor;
 
@@ -26,12 +28,22 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-Route::get('/doctor/{id}', function (string $id) {
+// Route::get('/doctor/{id}', function (string $id) {
 
-    $doctor = Doctor::findOrFail($id);
+//     $doctor = Doctor::find($id);
 
-    return view('profile.doctor', ['doctor' => $doctor]);
-});
+//     if (!$doctor) {
+//         // Handle the case where the doctor is not found, e.g., return a 404 page
+//         App::abort(404, 'Doctor not found');
+//     }
+
+//     // dd($doctor->toArray());
+
+
+//     return view('profile.doctor', ['doctor' => $doctor]);
+// });
+
+Route::get('/doctor/{id}', [DoctorController::class, 'show'])->name('profile.doctor');
 
 
 require __DIR__ . '/auth.php';

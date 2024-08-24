@@ -1,23 +1,10 @@
 <x-layout>
 
-    <h2>Doctor Profile</h2>
-    <h3></h3>
-    <p>{{ $doctor->specialty }}</p>
-    <p>{{ $doctor->phone }}</p>
-    <p>{{ $doctor->email }}</p>
-    <p>{{ $doctor->address }}</p>
-    <p>{{ $doctor->city }}</p>
-    <p>{{ $doctor->state }}</p>
-    <p>{{ $doctor->zip }}</p>
-    <p>{{ $doctor->country }}</p>
-    <p>{{ $doctor->bio }}</p>
-    <img src="{{ $doctor->image }}" alt="Doctor Image">
-
     <div class="bg-gray-900 min-h-screen p-4">
         <div class="max-w-3xl mx-auto bg-gray-800 rounded-lg shadow-md overflow-hidden">
             <!-- Header Section -->
             <div class="p-6 flex flex-col items-center space-y-4">
-                <img src="{{ $doctor->image }}" alt="Doctor's profile"
+                <img src="{{ $doctor->avatar }}" alt="Doctor's profile"
                     class="w-24 h-24 rounded-full border-4 border-purple-500">
                 <div class="text-center">
                     <h1 class="text-3xl font-extrabold text-white">Dr. {{ $doctor->name }}</h1>
@@ -31,7 +18,7 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
-                        {{ $doctor->city }}, {{ $doctor->state }} {{ $doctor->zip }}
+                        West Palm Beach, FL 33445
                     </p>
                 </div>
                 <button
@@ -49,7 +36,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M3 10v7a2 2 0 002 2h14a2 2 0 002-2v-7l-8-4-8 4z"></path>
                         </svg>
-                        <p class="text-gray-400"><span class="font-bold text-white">Phone:</span> (617) 555-1234</p>
+                        <p class="text-gray-400"><span class="font-bold text-white">Phone:</span>
+                            {{ $doctor->phone_number }}</p>
                     </div>
                     <div class="flex items-center">
                         <svg class="w-6 h-6 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"
@@ -57,7 +45,8 @@
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
                                 d="M21 12.79V19a2 2 0 01-2 2H5a2 2 0 01-2-2v-6.21M7 10V7a5 5 0 0110 0v3"></path>
                         </svg>
-                        <p class="text-gray-400"><span class="font-bold text-white">Email:</span> {{ $doctor->email }}
+                        <p class="text-gray-400"><span class="font-bold text-white">Email:</span>
+                            {{-- {{ optional($doctor->users->first())->email ?? 'No email available' }} --}} doctor@baptist.com
                         </p>
                     </div>
                     <div class="flex items-center">
@@ -67,7 +56,7 @@
                                 d="M8 7V3a1 1 0 011-1h6a1 1 0 011 1v4M8 7v10a4 4 0 004 4h0a4 4 0 004-4V7"></path>
                         </svg>
                         <p class="text-gray-400"><span class="font-bold text-white">Office:</span>
-                            {{ $doctor->address }}</p>
+                            4800 Linton Blvd Suite F-107</p>
                     </div>
                     <div class="flex items-center">
                         <svg class="w-6 h-6 text-white mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24"

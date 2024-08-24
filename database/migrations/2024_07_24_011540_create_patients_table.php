@@ -21,11 +21,23 @@ return new class extends Migration
             $table->string('gender');
             $table->string('occupation');
             $table->string('address');
-            $table->string('emergency_contact_name');
-            $table->string('emergency_contact_phone_number');
+
+            // JSON for emergency contact information
+            $table->json('emergency_contact')->nullable();
+
+            // JSON for medical information
+            $table->json('medical_information')->nullable();
+
+            // JSON for identification
+            $table->json('identification')->nullable();
+
+            // JSON for consents
+            $table->json('consents')->nullable();
+
             $table->timestamps();
         });
     }
+
 
     /**
      * Reverse the migrations.
